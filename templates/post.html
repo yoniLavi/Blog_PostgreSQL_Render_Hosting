@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ post.title }}</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Blog with Flask</h1>
+    <nav class="navbar">
+        <ul>
+            <li><a href="{{ url_for('index') }}">Home</a></li>
+            <li><a href="{{ url_for('create') }}">Create Post</a></li>
+            <li><a href="{{ url_for('edit', post_id=post.id) }}">Edit Post</a></li>
+        </ul>
+    </nav>
+    </header>
+
+    <h1>{{ post.title }}</h1>
+    <p>{{ post.content }}</p>
+    <p>Author: {{ post.author }}</p>
+    <p>Created At: {{ post.created_at }}</p>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit Post</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <h1>Edit Post</h1>
+    <form action="{{ url_for('edit', post_id=post.id) }}" method="POST">
+        <input type="text" name="title" value="{{ post.title }}" required>
+        <textarea name="content" required>{{ post.content }}</textarea>
+        <button type="submit">Save</button>
+    </form>
+    
+      <!-- Add Delete Post Form -->
+      <form action="{{ url_for('delete', post_id=post.id) }}" method="POST">
+        <button type="submit">Delete Post</button>
+    </form>
+</body>
