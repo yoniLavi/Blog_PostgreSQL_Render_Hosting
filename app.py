@@ -3,14 +3,16 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager, login_user, logout_user, login_required, UserMixin, current_user
 from datetime import datetime
 import numpy as np
+from config import Config
 import os
 
 
 app = Flask(__name__)
+app.config.from_object(Config)
 #app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:////Users/stephenkohlmann1/Flask_Projects/Blog_PostgreSQL/blog.db'
-app.config['SECRET_KEY'] = 'your_secret_key'
+#app.config['SECRET_KEY'] = 'your_secret_key'
 
-app.config['SQLALCHEMY_DATABASE_URI'] = "postgresql://flask_blog_m015_user:3LoDM02ITkdfm5MFQxiRH4p44UEGsQ5F@dpg-cjd467bbq8nc738a26t0-a.frankfurt-postgres.render.com/flask_blog_m015"
+#app.config['SQLALCHEMY_DATABASE_URI'] = "postgresql://flask_blog_m015_user:3LoDM02ITkdfm5MFQxiRH4p44UEGsQ5F@dpg-cjd467bbq8nc738a26t0-a.frankfurt-postgres.render.com/flask_blog_m015"
 #postgres://flask_blog_m015_user:3LoDM02ITkdfm5MFQxiRH4p44UEGsQ5F@dpg-cjd467bbq8nc738a26t0-a.frankfurt-postgres.render.com/flask_blog_m015
 
 #app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get("DATABASE_URL")
