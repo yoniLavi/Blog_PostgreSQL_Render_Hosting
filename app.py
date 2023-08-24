@@ -10,6 +10,14 @@ from config import Config
 app = Flask(__name__)
 app.config.from_object(Config)
 db = SQLAlchemy(app)
+
+#app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:////Users/stephenkohlmann1/Flask_Projects/Blog_PostgreSQL/blog.db'
+#app.config['SECRET_KEY'] = 'your_secret_key'
+
+#app.config['SQLALCHEMY_DATABASE_URI'] = "postgresql://flask_blog_m015_user:3LoDM02ITkdfm5MFQxiRH4p44UEGsQ5F@dpg-cjd467bbq8nc738a26t0-a.frankfurt-postgres.render.com/flask_blog_m015"
+#postgres://flask_blog_m015_user:3LoDM02ITkdfm5MFQxiRH4p44UEGsQ5F@dpg-cjd467bbq8nc738a26t0-a.frankfurt-postgres.render.com/flask_blog_m015
+
+#app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get("DATABASE_URL")
        
 login_manager = LoginManager(app)
 login_manager.login_view = 'login'
