@@ -44,10 +44,14 @@ nav a {
 }
 
 
-
 /* Main Content Styles */
 main {
   padding: 20px;
+}
+
+/* Flash messages container */
+.flashes {
+  margin-bottom: 20px;
 }
 
 /* Index Page */
@@ -131,6 +135,7 @@ button:hover {
   background-color: #fd7e14;
 }
 
+
 /* Post Styles */
 p {
   margin-bottom: 10px;
@@ -145,6 +150,14 @@ button[type="submit"]:hover {
   background-color: #218838;
 }
 
+button[type="submit"].danger {
+  background-color: #dc3545;
+}
+
+button[type="submit"].danger:hover {
+  background-color: #a13b45;
+}
+
 /* Responsive Styles */
 
 @media (max-width: 768px) {
@@ -152,7 +165,7 @@ button[type="submit"]:hover {
   body {
     font-size: 14px;
   }
-  
+
   /* Example: Adjust the layout or styles of specific elements */
   form {
     margin-bottom: 10px;

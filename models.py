@@ -2,6 +2,7 @@ from datetime import datetime
 
 from flask_login import UserMixin
 from flask_sqlalchemy import SQLAlchemy
+from sqlalchemy import text
 
 db = SQLAlchemy()
 
@@ -25,3 +26,10 @@ class BlogPost(db.Model):
 
     def __str__(self):
         return f'"{self.title}" by {self.author.username} ({self.created_at:%Y-%m-%d})'
+
+    @staticmethod
+    def get_title_lengths():
+        # An example of how to use raw SQL in SQLAlchemy
+        sql = text("SELECT length(title) FROM blog_post")
+        return db.session.execute(sql).scalars().all()  # Returns just the integers
+

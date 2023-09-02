@@ -2,9 +2,9 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <p>Average title length: {{ average_length }} characters</p>
-    <p>Maximum title length: {{ max_length }} characters</p>
-    <p>Minimum title length: {{ min_length }} characters</p>
-    <p>Total title length: {{ total_length }} characters</p>
-    <p>Median title length: {{ median_length }} characters</p>
+    <p>Average title length: {{ average_length|round(2) }} characters</p>
+    <p>Maximum title length: {{ max_length|round(2) }} characters</p>
+    <p>Minimum title length: {{ min_length|round(2) }} characters</p>
+    <p>Total title length: {{ total_length|round(2) }} characters</p>
+    <p>Median title length: {{ median_length|round(2) }} characters</p>
 {% endblock %}

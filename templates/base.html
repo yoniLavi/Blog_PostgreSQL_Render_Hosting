@@ -12,17 +12,27 @@
             <ul>
                 <li><a href="{{ url_for('index') }}">Home</a></li>
             {% if current_user.is_authenticated %}
-                <li><a href="{{ url_for('create') }}">Create Post</a></li>
-                <li><a href="{{ url_for('logout') }}">Logout</a></li>
+                <li><a href="{{ url_for('create_post_page') }}">Create Post</a></li>
+                <li><a href="{{ url_for('logout_page') }}">Logout</a></li>
                 <li><a href="{{ url_for('stats') }}">Stats</a></li>
             {% else %}
-                <li><a href="{{ url_for('login') }}">Login</a></li>
-                <li><a href="{{ url_for('register') }}">Register</a></li>
+                <li><a href="{{ url_for('login_page') }}">Login</a></li>
+                <li><a href="{{ url_for('register_page') }}">Register</a></li>
             {% endif %}
             </ul>
         </nav>
     </header>
     <main>
+      {% with messages = get_flashed_messages() %}
+        {% if messages %}
+          <ul class="flashes">
+          {% for message in messages %}
+            <li>{{ message }}</li>
+          {% endfor %}
+          </ul>
+        {% endif %}
+      {% endwith %}
+
       <h1>{{ title }}</h1>
       {% block content %}{% endblock %}
     </main>
