@@ -42,7 +42,8 @@ def register():
         user = User(username=username, password=password)
         db.session.add(user)
         db.session.commit()
-        return redirect(url_for("login"))
+        login_user(user)
+        return redirect(url_for("index"))
     return render_template("register.html")
 
 
@@ -75,7 +76,7 @@ def create():
     if request.method == "POST":
         title = request.form["title"]
         content = request.form["content"]
-        author = current_user.username
+        author = current_user
         post = BlogPost(title=title, content=content, author=author)
         db.session.add(post)
         db.session.commit()
@@ -126,5 +127,4 @@ def stats():
 
 
 if __name__ == "__main__":
-    # app.run(debug=True)
-    app.run()
+    app.run(debug=True)

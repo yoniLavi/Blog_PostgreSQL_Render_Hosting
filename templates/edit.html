@@ -11,9 +11,10 @@
         <textarea name="content" required>{{ post.content }}</textarea>
         <button type="submit">Save</button>
     </form>
-    
-      <!-- Add Delete Post Form -->
-      <form action="{{ url_for('delete', post_id=post.id) }}" method="POST">
+
+    <!-- Add Delete Post Form -->
+    <form action="{{ url_for('delete', post_id=post.id) }}" method="POST">
         <button type="submit">Delete Post</button>
     </form>
 </body>
+</html>
