@@ -1,25 +1,10 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Stats</title>
-  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
-</head>
-<body>
-  <header>
-    <h1>Stats</h1>
-    <nav>
-      <ul>
-        <li><a href="{{ url_for('index') }}">Back to Home</a></li>
-      </ul>
-    </nav>
-  </header>
-  <main>
-    <h2>Statistics</h2>
+{% set title = "Statistics" %}
+{% extends 'base.html' %}
+
+{% block content %}
     <p>Average title length: {{ average_length }} characters</p>
     <p>Maximum title length: {{ max_length }} characters</p>
     <p>Minimum title length: {{ min_length }} characters</p>
     <p>Total title length: {{ total_length }} characters</p>
     <p>Median title length: {{ median_length }} characters</p>
-  </main>
-</body>
-</html>
+{% endblock %}
